@@ -6,29 +6,27 @@ var cards = [
   {rank:"king",suit:"hearts",cardImage:"images/king-of-hearts.png"},
   {rank:"king",suit:"diamonds",cardImage:"images/king-of-diamonds.png"}
 ];
-
 var cardsInPlay =[];
+
 var checkForMatch = function (){
     if (cardsInPlay[0]===cardsInPlay[1]){
-      console.log("You found a match!");
+      alert("You found a match!");
     } else {
-      console.log("Sorry, try again.");
+      alert("Sorry, try again.");
     }
 }
-
 var flipCard = function (cardId){
   cardsInPlay.push(cards[cardId].rank);
   console.log("User flipped " + cards[cardId].rank);
-  console.log("User flipped " + cards[cardId].suit);
-  console.log("User flipped " + cards[cardId].cardImage);
-
+  console.log(cards[cardId].suit);
+  console.log(cards[cardId].cardImage);
   checkForMatch();
 }
-
 var createBoard = function (){
   for (var i = 0;i < theArray.length;i++){
     var newImg = document.createElement('img');
     newImg.setAttribute('src','images/back.png');
+    newImg.setAttribute('data-id', i);
   }
 }
 flipCard(0);
