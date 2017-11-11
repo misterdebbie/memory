@@ -23,11 +23,15 @@ var flipCard = function (cardId){
   checkForMatch();
 }
 var createBoard = function (){
-  for (var i = 0;i < theArray.length;i++){
-    var newImg = document.createElement('img');
-    newImg.setAttribute('src','images/back.png');
-    newImg.setAttribute('data-id', i);
+  for (var i = 0;i < cards.length;i++){
+    var cardElement = document.createElement('img');
+    cardElement.setAttribute('src','images/back.png');
+    cardElement.setAttribute('data-id', i);
+    document.getElementsByTagName('cardElement').addEventListener('click',flipCard);
+    document.getElementById('game-board').appendChild(cardElement);
   }
 }
-flipCard(0);
-flipCard(2);
+
+createBoard();
+//flipCard(0);
+//flipCard(2);
